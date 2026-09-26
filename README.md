@@ -19,5 +19,5 @@ This repository contains a simple personal Curriculum Vitae (CV) web page built 
 Open `index.html` directly in a browser, or enable **GitHub Pages** for this repository (Settings → Pages → Deploy from branch → `main` / root) to view it live at:
 
 ```
-https://<your-username>.github.io/<repo-name>/
+https://drennndrenn.github.io/About-me/
 ```
