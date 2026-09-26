@@ -13,7 +13,6 @@
 <body>
 
 <script>
-  // Set theme before paint to avoid a flash of the wrong mode.
   (function () {
     var saved = localStorage.getItem('cv-theme');
     var theme = saved || (window.matchMedia('(prefers-color-scheme: dark)').matches ? 'dark' : 'light');
@@ -243,29 +242,35 @@
           </div>
         </div>
 
-        <div class="proj-card" tabindex="0">
-          <div class="proj-inner">
-            <div class="proj-face proj-front">
-              <p class="proj-eyebrow">personal · coursework</p>
-              <h3>Frontend &amp; Full-Stack Development</h3>
-              <p class="proj-tagline">Smaller apps and interfaces, built to learn the stack.</p>
-              <div class="tags">
-                <span class="tag">React</span>
-                <span class="tag">Vue</span>
-                <span class="tag">FastAPI</span>
-              </div>
-            </div>
-            <div class="proj-face proj-back">
-              <h3>Frontend &amp; Full-Stack Development</h3>
-              <ul>
-                <li>Interfaces and apps across React, Vue, and Tailwind</li>
-                <li>Backend work in FastAPI, Laravel, and PostgreSQL</li>
-                <li>Built to understand how production systems fit together</li>
-              </ul>
-              <p class="proj-meta">Personal &amp; Coursework</p>
-            </div>
-          </div>
-        </div>
+<div class="proj-card" tabindex="0">
+  <div class="proj-inner">
+
+    <div class="proj-face proj-front">
+      <p class="proj-eyebrow">web · resort management</p>
+      <h3>Ocean View Resort Booking and Management System</h3>
+      <p class="proj-tagline">Online resort booking and management platform.</p>
+
+      <div class="tags">
+        <span class="tag">React</span>
+        <span class="tag">PHP</span>
+        <span class="tag">MySQL</span>
+      </div>
+    </div>
+
+    <div class="proj-face proj-back">
+      <h3>Ocean View RBMS</h3>
+      <ul>
+        <li>Online room and resort reservations</li>
+        <li>Role-based admin and guest management</li>
+        <li>Booking, payment, and resort management</li>
+      </ul>
+
+      <p class="proj-meta">Web Project · IT223</p>
+    </div>
+
+  </div>
+</div>
+
 
       </div>
     </div>
