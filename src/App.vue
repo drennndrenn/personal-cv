@@ -4,7 +4,7 @@ import { useRoute } from 'vue-router'
 const route = useRoute()
 const menuOpen = ref(false)
 const main = ref(null)
-const links = [{name:'About',path:'/'},{name:'Education',path:'/education'},{name:'Skills',path:'/skills'},{name:'Projects',path:'/projects'},{name:'Contact',path:'/contact'}]
+const links = [{name:'About',path:'/'},{name:'Education',path:'/education'},{name:'Skills',path:'/skills'},{name:'Projects',path:'/projects'},{name:'Experience',path:'/experience'},{name:'CV',path:'/cv'},{name:'Contact',path:'/contact'}]
 watch(() => route.path, async () => { menuOpen.value = false; await nextTick(); main.value?.focus({ preventScroll: true }) })
 </script>
 
@@ -17,13 +17,13 @@ watch(() => route.path, async () => { menuOpen.value = false; await nextTick(); 
       <button class="menu-button" @click="menuOpen = !menuOpen" :aria-expanded="menuOpen" aria-controls="navigation">{{ menuOpen ? 'Close ✕' : 'Menu ☰' }}</button>
     </div>
     <nav id="navigation" class="navigation wrap" :class="{open:menuOpen}" aria-label="Main navigation">
-      <RouterLink v-for="link in links" :key="link.path" :to="link.path" :class="{active:route.path === link.path}">{{ link.name }}</RouterLink>
+      <RouterLink v-for="link in links" :key="link.path" :to="link.path" :class="{active:route.path === link.path}" :aria-current="route.path === link.path ? 'page' : undefined">{{ link.name }}</RouterLink>
     </nav>
   </header>
   <div class="wrap body-wrap">
     <section class="profile-banner" aria-label="Personal introduction">
       <img src="/image/download.jpg" alt="Aldren Ross" width="112" height="112" class="portrait">
-      <div class="profile-copy"><p class="eyebrow">FULL-STACK DEVELOPER & BSIT STUDENT</p><h1>Aldren Ross<span class="dot">.</span></h1><p>Building thoughtful interfaces, practical systems,<br class="desktop-break"> and a little intelligence along the way.</p><span class="location">⌖ Sto. Tomas, Davao del Norte, Philippines</span></div>
+      <div class="profile-copy"><p class="eyebrow">SOFTWARE DEVELOPER & BSIT STUDENT</p><h1>Aldren Ross<span class="dot">.</span></h1><p>Building thoughtful interfaces, practical systems,<br class="desktop-break"> and a little intelligence along the way.</p><span class="location">⌖ Sto. Tomas, Davao del Norte, Philippines</span></div>
       <div class="banner-actions"><RouterLink class="button primary" to="/contact">Say hello <span>↗</span></RouterLink><a class="button secondary" href="https://github.com/drennndrenn" target="_blank" rel="noopener noreferrer">GitHub ↗</a></div>
     </section>
     <main id="main" ref="main" tabindex="-1">

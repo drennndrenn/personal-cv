@@ -19,16 +19,16 @@ On Windows, use `npm.cmd` if PowerShell blocks `npm.ps1`.
 
 ## Structure
 - `src/App.vue`: shared profile header, navigation, footer.
-- `src/main.js`: five routes, page titles, scroll reset.
-- `src/pages/`: About, Education, Skills, Projects, Contact.
+- `src/main.js`: seven routes, a legacy Achievements redirect, page titles, scroll reset.
+- `src/pages/`: About, Education, Skills, Projects, Experience, CV, Contact.
 - `src/style.css`: responsive layout, animations, reduced motion.
 - `public/image/download.jpg`: original CV photo.
 - Root `style.css`, `script.js`, and `image/`: previous static implementation retained for reference, not loaded by Vue.
 
 ## Features
-Separate page URLs; mobile navigation; keyboard focus styles; reduced-motion support; project filters and 3D rotating cards with detailed backs (hover on desktop, tap on touch screens, Enter/Space with a keyboard); email, telephone and GitHub links; copy-email button; validated contact form that opens an email draft for the visitor to send.
+Separate page URLs; mobile navigation; keyboard focus styles; reduced-motion support; project filters and 3D rotating cards with detailed backs (hover on desktop, tap on touch screens, Enter/Space with a keyboard); experience entries; print-friendly CV; email, telephone, GitHub, Instagram, and Facebook links; copy-email button; validated contact form that opens an email draft for the visitor to send.
 
-Project illustrations are decorative graphics, not application screenshots. Repositories are private, so public repository and demo buttons are omitted. No certifications, awards, or unverified performance metrics are included.
+Project illustrations are decorative graphics, not application screenshots. Public repositories are linked on their project cards; other repositories remain private. No live demos, certifications, awards, or unverified performance metrics are claimed. The CV references in the local Downloads folder are visual mockups, not evidence of qualifications.
 
 ## Deployment
 Student: **Aldren Ross**
