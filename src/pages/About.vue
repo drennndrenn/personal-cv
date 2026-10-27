@@ -44,7 +44,7 @@
           <dl class="details">
             <div>
               <dt>Name</dt>
-              <dd>Aldren Ross</dd>
+              <dd>Aldren Ross Luga</dd>
             </div>
             <div>
               <dt>Program</dt>
