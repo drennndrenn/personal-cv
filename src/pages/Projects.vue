@@ -66,7 +66,7 @@ const projects = [
     ],
   },
   {
-    id: 'orca-bridge', name: 'codex-telegram-bridge', type: 'Tools',
+    id: 'orca-bridge', name: 'Codex Telegram Bridge', type: 'Tools',
     category: 'DEVELOPER TOOLS / TELEGRAM', symbol: '⇄',
     description: 'Manage Codex conversations, approvals, and sessions from PowerShell or a private Telegram chat.',
     tech: ['Python', 'PowerShell', 'Telegram', 'Codex CLI'], context: 'Developer tooling project · Windows 11',
