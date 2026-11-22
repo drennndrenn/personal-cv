@@ -12,7 +12,7 @@
         <p class="eyebrow">⌘ PROFILE</p>
         <h3>From the first pixel<br />to the bigger picture.</h3>
         <p>
-          II'm a fourth-year Information Technology student at Davao del Norte
+          I'm a fourth-year Information Technology student at Davao del Norte
           State College, working across frontend, backend, and machine learning.
         </p>
         <p>
@@ -44,7 +44,7 @@
           <dl class="details">
             <div>
               <dt>Name</dt>
-              <dd>Aldren Ross</dd>
+              <dd>Aldren Ross Luga</dd>
             </div>
             <div>
               <dt>Program</dt>

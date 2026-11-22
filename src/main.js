@@ -5,6 +5,8 @@ import About from './pages/About.vue'
 import Education from './pages/Education.vue'
 import Skills from './pages/Skills.vue'
 import Projects from './pages/Projects.vue'
+import Experience from './pages/Experience.vue'
+import CV from './pages/CV.vue'
 import Contact from './pages/Contact.vue'
 import './style.css'
 
@@ -15,6 +17,9 @@ const router = createRouter({
     { path: '/education', name: 'Education', component: Education },
     { path: '/skills', name: 'Skills', component: Skills },
     { path: '/projects', name: 'Projects', component: Projects },
+    { path: '/experience', name: 'Experience', component: Experience },
+    { path: '/cv', name: 'CV / Resume', component: CV },
+    { path: '/achievements', redirect: '/experience' },
     { path: '/contact', name: 'Contact', component: Contact },
     { path: '/:pathMatch(.*)*', redirect: '/' },
   ],

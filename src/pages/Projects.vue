@@ -80,6 +80,36 @@ const projects = [
       'Receive complete long responses as UTF-8 text files.',
     ],
   },
+  {
+    id: 'campus-store-pos', name: 'Campus Store POS — Self-Service Kiosk', type: 'Web',
+    category: 'WEB / ACADEMIC TEAM PROJECT', symbol: '▦',
+    description: 'A touch-friendly campus store kiosk for selecting items, reviewing an order, and completing simulated payments.',
+    tech: ['Vue 3', 'Vite', 'Pinia', 'Vue Router', 'Tailwind CSS'], context: 'IT415 midterm project · Frontend prototype',
+    overview: 'A frontend-only kiosk demo. Cash, QR, and card flows are simulated; no real payment gateway or backend is involved.',
+    flow: 'Vue interface → Pinia cart → browser localStorage for transaction history',
+    details: [
+      'Browse 14 products across four categories and manage quantities in a live cart.',
+      'Review the order, try simulated cash, QR, or card payment, and view a receipt.',
+      'Print a receipt from the browser and start a new transaction.',
+      'Vitest and browser smoke checks cover transaction flows and responsive layout.',
+    ],
+    repository: 'https://github.com/drennndrenn/self-service-kiosk/tree/feature/kiosk-improvements',
+  },
+  {
+    id: 'orca-dev', name: 'OrcaDev', type: 'Tools',
+    category: 'DEVELOPER TOOLS / AI-ASSISTED WORKFLOWS', symbol: '⌘',
+    description: 'A Python CLI that turns project goals into task plans and runs them with verification and scoped Git checkpoints.',
+    tech: ['Python', 'Codex CLI', 'Git', 'SQLite', 'pytest'], context: 'Independent developer tool · In development',
+    overview: 'A portable local tool for inspecting Git projects, planning from Markdown goals, and tracking task execution. It needs an installed, authenticated Codex CLI for AI-backed commands.',
+    flow: 'Markdown goal → Codex CLI task graph → guarded task runner → verification and local Git checkpoints',
+    details: [
+      'Discovers contained Git repositories and stores project configuration and durable state locally.',
+      'Reviews goals, builds task plans, and runs tasks in dependency order.',
+      'Checks branch, clean-tree, path, and verification rules before local commits.',
+      'Records session and usage data; never pushes or deploys automatically.',
+    ],
+    repository: 'https://github.com/drennndrenn/OrcaDev/tree/feature/orcadev-v2',
+  },
 ]
 const shown = computed(() => projects.filter(project => filter.value === 'All' || project.type === filter.value))
 watch(filter, () => { flipped.value = new Set() })
@@ -118,8 +148,8 @@ function tap(event, id) {
       </div>
     </div>
     <div class="projects-grid">
+      <div v-for="project in shown" :key="project.id" class="project-item">
       <article
-        v-for="project in shown" :key="project.id"
         class="project-card flip-card" :class="{ 'is-flipped': flipped.has(project.id) }"
         tabindex="0" role="button" :aria-label="`${project.name}: ${flipped.has(project.id) ? 'details' : 'summary'}`"
         :aria-pressed="flipped.has(project.id)" :aria-describedby="`${project.id}-${flipped.has(project.id) ? 'back' : 'front'} flip-help`"
@@ -155,15 +185,21 @@ function tap(event, id) {
           </div>
         </div>
       </article>
+      <a v-if="project.repository" class="project-repository" :href="project.repository" target="_blank" rel="noopener noreferrer" :aria-label="`View ${project.name} on GitHub (opens in a new tab)`">View repository on GitHub ↗</a>
+      </div>
     </div>
-    <div class="note"><span>↗</span><p>Source repositories are private. These summaries describe my project work; public demos are currently unavailable.</p></div>
+    <div class="note"><span>↗</span><p>Some project repositories are private. Public repositories are linked above; no live demos are available for these projects.</p></div>
   </div>
 </template>
 
 <style scoped>
 .flip-help { color: var(--muted); font-size: 12px; margin: -8px 0 24px; max-width: 75ch; }
 .projects-grid { grid-auto-rows: 1fr; }
+.project-item { display: flex; flex-direction: column; min-width: 0; }
+.project-repository { display: block; align-self: flex-start; margin-top: 12px; color: var(--accent); font-size: 12px; font-weight: 600; }
+.project-repository:hover { text-decoration: underline; }
 .flip-card { perspective: 1600px; overflow: visible; cursor: pointer; min-width: 0; min-height: 674px; border-radius: 9px; }
+.project-item .flip-card { flex: 1; }
 .flip-card:focus-visible { outline: 2px solid var(--accent); outline-offset: 5px; }
 .flip-inner { display: grid; height: 100%; transform-style: preserve-3d; transition: transform .65s cubic-bezier(.2,.65,.25,1); }
 .is-flipped .flip-inner { transform: rotateY(180deg); }
